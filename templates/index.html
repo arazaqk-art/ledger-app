@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card p-3 bg-primary text-white">
+            <h5>Total Entries</h5>
+            <h2>{{ total_entries }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 bg-success text-white">
+            <h5>Total Sale</h5>
+            <h2>Rs {{ total_sale }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 bg-danger text-white">
+            <h5>Total Balance</h5>
+            <h2>Rs {{ total_balance }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="card p-3">
+    <h4>All Ledger Entries</h4>
+
+    <table class="table table-hover mt-3">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Vehicle</th>
+                <th>Total</th>
+                <th>Received</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for e in entries %}
+            <tr>
+                <td>{{ e.customer.name }}</td>
+                <td>{{ e.date }}</td>
+                <td>{{ e.vehicle_no }}</td>
+                <td>{{ e.total_amount }}</td>
+                <td>{{ e.payment_received }}</td>
+                <td>{{ e.balance }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

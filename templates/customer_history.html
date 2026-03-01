@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Ledger History - {{ name }}</h3>
+<h4>Total Balance: {{ total_balance }}</h4>
+
+<table border="1" cellpadding="5">
+<tr>
+<th>Date</th>
+<th>Vehicle</th>
+<th>Total</th>
+<th>Received</th>
+<th>Balance</th>
+</tr>
+
+{% for e in entries %}
+<tr>
+<td>{{ e.date }}</td>
+<td>{{ e.vehicle_no }}</td>
+<td>{{ e.total_amount }}</td>
+<td>{{ e.received_amount }}</td>
+<td>{{ e.balance }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<a href="/">Back to Dashboard</a>
+
+{% endblock %}

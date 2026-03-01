@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+jinja2
+python-multipart
+psycopg2-binary
+itsdangerous
+passlib
+twilio
+itsdangerous
+openpyxl
+reportlab

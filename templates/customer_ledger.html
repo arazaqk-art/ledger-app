@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4>Customer Detail</h4>
+
+<div class="card p-3 mb-3">
+<strong>Name:</strong> {{ customer.name }} <br>
+<strong>Phone:</strong> {{ customer.phone }} <br>
+<strong>Address:</strong> {{ customer.address }}
+</div>
+
+<h5>Ledger Records</h5>
+
+<table class="table table-bordered">
+<thead class="table-dark">
+<tr>
+<th>Date</th>
+<th>Vehicle</th>
+<th>Total</th>
+<th>Received</th>
+<th>Balance</th>
+</tr>
+</thead>
+
+<tbody>
+{% for e in entries %}
+<tr>
+<td>{{ e.date }}</td>
+<td>{{ e.vehicle_no }}</td>
+<td>{{ e.total_amount }}</td>
+<td>{{ e.received_amount }}</td>
+<td>{{ e.balance }}</td>
+</tr>
+{% endfor %}
+</tbody>
+
+</table>
+
+{% endblock %}
