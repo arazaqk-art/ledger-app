@@ -1,8 +1,0 @@
-venv/
-__pycache__/
-*.db
-*.sqlite3
-*.pdf
-*.xlsx
-.env
-*.log
