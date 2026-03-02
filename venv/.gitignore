@@ -6,4 +6,3 @@ __pycache__/
 *.xlsx
 .env
 *.log
-.DS_Store
